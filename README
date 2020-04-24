@@ -1,1 +1,8 @@
 Unity study repo
+
+Прописать в .git/config
+[merge "unityyamlmerge"]
+	name = Unity SmartMerge (UnityYamlMerge)
+	driver = \"{путь к папке с Unity}/Editor/Data/Tools/UnityYAMLMerge.exe\" merge -h -p --force --fallback none %O %B %A %A
+	recursive = binary
+
