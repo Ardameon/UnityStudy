@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WanderingAI : MonoBehaviour
 {
-    [SerializeField] private GameObject fireballPrefab;
+    [SerializeField] private GameObject fireballPrefab = null;
     private GameObject fireBall;
     public float speed = 3;
     public float obstacleRange = 3;

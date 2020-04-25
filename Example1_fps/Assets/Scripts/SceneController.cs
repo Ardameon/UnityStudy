@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SceneController : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GameObject enemyPrefab = null;
     private GameObject enemy;
 
     // Start is called before the first frame update
