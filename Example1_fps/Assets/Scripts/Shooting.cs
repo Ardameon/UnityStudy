@@ -7,15 +7,10 @@ public class Shooting : MonoBehaviour
     public GameObject projectilePrefab;
     private GameObject projectile;
     private Rigidbody projectileRB;
-    private GameObject player;
-    [Range(1, 100)]
-    public float multiolyer = 1;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        player = GameObject.Find("Player");
-    }
+    [Tooltip("Force strength applyed to projectile when it appeares")]
+    [Range(1, 100)]
+    public float forceMultiplyer = 1;
 
     // Update is called once per frame
     void Update()
@@ -24,12 +19,10 @@ public class Shooting : MonoBehaviour
         {
             projectile = Instantiate(projectilePrefab) as GameObject;
             projectile.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
-            projectile.transform.rotation = player.transform.rotation;
+            projectile.transform.rotation = transform.rotation;
             
-            
-
             projectileRB = projectile.GetComponent<Rigidbody>();
-            projectileRB.AddForce(transform.TransformPoint(Vector3.forward * multiolyer), ForceMode.Impulse);
+            projectileRB.AddForce(transform.TransformDirection(Vector3.forward * forceMultiplyer), ForceMode.Impulse);
         }
     }
 }
